@@ -21,9 +21,23 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
+        var circle;
+        var circles = [];
+
+        function drawCircle(){
+            circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+            physikz.addRandomVelocity(circle, canvas, );
+            view.addChild(circle);
+            circles.push(circle);
+        }
         
         
 
+        // TODO 7
+        for (var loopsCompleted = 0; loopsCompleted <= 100; loopsCompleted++) {
+           drawCircle();
+            
+        }
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -37,7 +51,14 @@ var init = function (window) {
         function update() {
             
            
+            // TODO 5
             
+            // TODO 8
+            for (var i = 0; i < circles.length; i++){
+                var eachCircle = myArray[i];
+                physikz.updatePosition(circles[i]);
+                    game.checkCirclePosition(circles[i]);
+            }
         }
     
         /* 
@@ -52,8 +73,19 @@ var init = function (window) {
                 circle.x = 0;
             }
             
+            // TODO 6
+            if (circle.x < 0) {
+                circle.x = canvas.width;
+            }
+            
+            if (circle.y > canvas.height) {
+                circle.y = 0;
+            }
+            if (circle.y < 0) {
+                circle.y = canvas.height;
+            }
         }
-        
+            
         /////////////////////////////////////////////////////////////
         // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
         /////////////////////////////////////////////////////////////
