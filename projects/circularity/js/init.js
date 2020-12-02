@@ -34,18 +34,8 @@ var init = function (window) {
         
 
         // TODO 7
-        for (var loopsCompleted = 0; loopsCompleted <= 10; loopsCompleted++) {
+        for (var loopsCompleted = 0; loopsCompleted <= 100; loopsCompleted++) {
            drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-
         }
 
         ////////////////////////////////////////////////////////////
@@ -64,9 +54,9 @@ var init = function (window) {
             
             // TODO 8
             for (var i = 0; i < circles.length; i++){
-                var eachCircle = myArray[i];
+                var eachCircle = circles[i];
                 physikz.updatePosition(circles[i]);
-                    game.checkCirclePosition(circles[i]);
+                game.checkCirclePosition(circles[i]);
             }
         }
     
